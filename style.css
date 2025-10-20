@@ -1,0 +1,227 @@
+/* ===== Body ===== */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ===== Navbar ===== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  border-radius: 0 0 15px 15px;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  color: white;
+  font-weight: 600;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav ul li button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+  padding: 0.25rem 0.5rem;
+}
+
+nav ul li button:hover {
+  color: #facc15;
+  transform: scale(1.1);
+  text-shadow: 0 0 10px #facc15;
+}
+
+/* ===== Main con fondo ===== */
+.main {
+  transition: background-image 1s ease-in-out;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 120px;
+  overflow-x: hidden;
+}
+
+/* ===== Descripción ===== */
+.description {
+  margin-bottom: 40px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+/* ===== Carousel ===== */
+.fade-enter { opacity: 0; transform: translateY(10px); }
+.fade-enter-active { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease; }
+
+.carousel-container {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  height: 300px;
+  perspective: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 80px;
+  transform-style: preserve-3d;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-item:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  z-index: 10;
+}
+
+/* ===== Footer ===== */
+footer {
+  position: relative;
+  width: 100%;
+  background: #0a0a0a;
+  color: white;
+  text-align: center;
+  overflow: visible;
+}
+
+.footer-wave {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 150px;
+  background: url('data:image/svg+xml;utf8,<svg width="1440" height="150" xmlns="http://www.w3.org/2000/svg"><path fill="%23facc15" d="M0,50 C360,150 1080,0 1440,50 L1440,150 L0,150 Z"/></svg>') repeat-x;
+  background-size: cover;
+  animation: wave 10s linear infinite;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.footer-wave:nth-child(2) {
+  bottom: 20px;
+  animation-duration: 15s;
+  opacity: 0.3;
+}
+
+@keyframes wave {
+  0% { background-position-x: 0; }
+  100% { background-position-x: 1440px; }
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 3rem;
+  position: relative;
+  z-index: 5;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1 1 300px;
+  text-align: left;
+}
+
+.footer-section h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.footer-section p,
+.footer-section a {
+  font-size: 1rem;
+  color: #e0f7ff;
+}
+
+.footer-section a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer-map iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  border: none;
+}
+
+.footer-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-socials a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #e0f7ff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.footer-socials a:hover {
+  color: #ffffff;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 768px) {
+  nav ul { gap: 1rem; }
+  nav ul li button { font-size: 0.95rem; padding: 0.2rem 0.4rem; }
+  .carousel-container { height: 200px; }
+  .carousel-item { width: 90px; height: 60px; }
+}
