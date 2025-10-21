@@ -1,8 +1,9 @@
-# Imagen base oficial de Nginx
 FROM nginx:alpine
 
-# Copiamos todos los archivos del proyecto al directorio que Nginx sirve por defecto
+COPY default.conf /etc/nginx/conf.d/default.conf
 COPY . /usr/share/nginx/html
 
-# Exponemos el puerto 80 (el que usa Nginx)
-EXPOSE 80
+ENV PORT=8080
+EXPOSE 8080
+
+CMD ["sh", "-c", "envsubst '$PORT' < /etc/nginx/conf.d/default.conf > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
