@@ -91,11 +91,11 @@ const categories = [
     name: "Construcción 🧱",
     items: [
       { img: "https://w0.peakpx.com/wallpaper/503/778/HD-wallpaper-construction-contractor-thumbnail.jpg", text: "Remodelaciones", price: "$80.000" },
-      { img: "https://images.unsplash.com/photo-1597003101852-5d3e0d7b08df?auto=format&fit=crop&w=400&q=80", text: "Pintura de interiores", price: "$35.000" },
-      { img: "https://images.unsplash.com/photo-1597003101852-5d3e0d7b08df?auto=format&fit=crop&w=400&q=80", text: "Ampliaciones", price: "$120.000" },
+      { img: "https://media.istockphoto.com/id/1384317531/es/foto/rodillo-de-pintura-antes-y-despu%C3%A9s-del-hombre-para-revelar-una-habitaci%C3%B3n-recientemente.jpg?s=612x612&w=0&k=20&c=dkWg-dNOuTqenFlu4ZFxOJzjMYPef7GRvpWyGREvOuc=", text: "Pintura de interiores", price: "$35.000" },
+      { img: "https://plus.unsplash.com/premium_photo-1661915661139-5b6a4e4a6fcc?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2FzYXxlbnwwfHwwfHx8MA%3D%3D&fm=jpg&q=60&w=3000", text: "Ampliaciones", price: "$120.000" },
       { img: "https://w0.peakpx.com/wallpaper/503/778/HD-wallpaper-construction-contractor-thumbnail.jpg", text: "Remodelaciones", price: "$80.000" },
-      { img: "https://images.unsplash.com/photo-1597003101852-5d3e0d7b08df?auto=format&fit=crop&w=400&q=80", text: "Pintura de interiores", price: "$35.000" },
-      { img: "https://images.unsplash.com/photo-1597003101852-5d3e0d7b08df?auto=format&fit=crop&w=400&q=80", text: "Ampliaciones", price: "$120.000" },
+      { img: "https://media.istockphoto.com/id/1384317531/es/foto/rodillo-de-pintura-antes-y-despu%C3%A9s-del-hombre-para-revelar-una-habitaci%C3%B3n-recientemente.jpg?s=612x612&w=0&k=20&c=dkWg-dNOuTqenFlu4ZFxOJzjMYPef7GRvpWyGREvOuc=", text: "Pintura de interiores", price: "$35.000" },
+      { img: "https://plus.unsplash.com/premium_photo-1661915661139-5b6a4e4a6fcc?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2FzYXxlbnwwfHwwfHx8MA%3D%3D&fm=jpg&q=60&w=3000", text: "Ampliaciones", price: "$120.000" },
     ]
   },
   {
@@ -110,39 +110,36 @@ const categories = [
     ]
   },
   {
-    name: "Educacion 🍽️",
+    name: "Educacion 📖",
     items: [
-      { img: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=400&q=80", text: "Catering gourmet", price: "$45.000" },
-      { img: "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=400&q=80", text: "Menús ejecutivos", price: "$25.000" },
-      { img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&q=80", text: "Eventos familiares", price: "$30.000" },
-      { img: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=400&q=80", text: "Catering gourmet", price: "$45.000" },
-      { img: "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=400&q=80", text: "Menús ejecutivos", price: "$25.000" },
-      { img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&q=80", text: "Eventos familiares", price: "$30.000" },
-      
+      { img: "https://media.gettyimages.com/id/1472553376/es/v%C3%ADdeo/mujer-ense%C3%B1ando-a-los-ni%C3%B1os-y-aprendiendo-con-pizarra-para-la-educaci%C3%B3n-el-futuro-y-el.jpg?s=640x640&k=20&c=uYNay8zomMb9cVFXXjBjqjqC0men7HDrFqkERD-bZ2Q=", text: "Clases presenciales", price: "$45.000" },
+      { img: "https://enlinea.santotomas.cl/web/wp-content/uploads/sites/2/2019/05/bbva-educacion-1920x0-c-f.jpg", text: "Clases virtuales", price: "$25.000" },
+      { img: "https://wallpapers.com/images/featured/educacion-d4w62mny8rdusxe0.jpg", text: "Examenes Libres", price: "$30.000" },
+      { img: "https://media.gettyimages.com/id/1472553376/es/v%C3%ADdeo/mujer-ense%C3%B1ando-a-los-ni%C3%B1os-y-aprendiendo-con-pizarra-para-la-educaci%C3%B3n-el-futuro-y-el.jpg?s=640x640&k=20&c=uYNay8zomMb9cVFXXjBjqjqC0men7HDrFqkERD-bZ2Q=", text: "Clases presenciales", price: "$45.000" },
+      { img: "https://enlinea.santotomas.cl/web/wp-content/uploads/sites/2/2019/05/bbva-educacion-1920x0-c-f.jpg", text: "Clases virtuales", price: "$25.000" },
+      { img: "https://wallpapers.com/images/featured/educacion-d4w62mny8rdusxe0.jpg", text: "Examenes Libres", price: "$30.000" },
     ]
   },
   {
-    name: "Salud 🍽️",
+    name: "Salud 💉",
     items: [
-      { img: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=400&q=80", text: "Catering gourmet", price: "$45.000" },
-      { img: "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=400&q=80", text: "Menús ejecutivos", price: "$25.000" },
-      { img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&q=80", text: "Eventos familiares", price: "$30.000" },
-      { img: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=400&q=80", text: "Catering gourmet", price: "$45.000" },
-      { img: "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=400&q=80", text: "Menús ejecutivos", price: "$25.000" },
-      { img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&q=80", text: "Eventos familiares", price: "$30.000" },
-      
+      { img: "https://img.freepik.com/foto-gratis/doctor-estetoscopio-cerca_23-2149191355.jpg", text: "Cosulta Mwdica", price: "$45.000" },
+      { img: "https://wallpapers.com/images/hd/medical-doctor-clinical-symbols-2nsmzg70r0to981e.jpg", text: "Tele Medicina", price: "$25.000" },
+      { img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv5SNKOwY8ZJRavTWx979IytOCl9FoSZN7TQ&s", text: "Compra de remedios", price: "$30.000" },
+      { img: "https://img.freepik.com/foto-gratis/doctor-estetoscopio-cerca_23-2149191355.jpg", text: "Cosulta Mwdica", price: "$45.000" },
+      { img: "https://wallpapers.com/images/hd/medical-doctor-clinical-symbols-2nsmzg70r0to981e.jpg", text: "Tele Medicina", price: "$25.000" },
+      { img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv5SNKOwY8ZJRavTWx979IytOCl9FoSZN7TQ&s", text: "Compra de remedios", price: "$30.000" },
     ]
   },
   {
-    name: "Limpieza 🍽️",
+    name: "Limpieza 🪣",
     items: [
-      { img: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=400&q=80", text: "Catering gourmet", price: "$45.000" },
-      { img: "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=400&q=80", text: "Menús ejecutivos", price: "$25.000" },
-      { img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&q=80", text: "Eventos familiares", price: "$30.000" },
-      { img: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=400&q=80", text: "Catering gourmet", price: "$45.000" },
-      { img: "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=400&q=80", text: "Menús ejecutivos", price: "$25.000" },
-      { img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&q=80", text: "Eventos familiares", price: "$30.000" },
-      
+      { img: "https://media.istockphoto.com/id/1365606525/es/foto/toma-de-un-cubo-de-art%C3%ADculos-de-limpieza.jpg?s=612x612&w=0&k=20&c=F16ka9KPsmIwGzClt4y-yrec43BZZjit8OpV3geAySA=", text: "Limpieza a domicilio", price: "$45.000" },
+      { img: "https://img.freepik.com/foto-gratis/composicion-plana-productos-limpieza-espacio-copia_23-2148133453.jpg", text: "Venta de Insumos", price: "$25.000" },
+      { img: "https://media.gettyimages.com/id/1985444295/es/v%C3%ADdeo/t%C3%A9cnico-de-sistemas-de-energ%C3%ADa-solar-limpieza-de-paneles-solares-servicio-de-mantenimiento-de.jpg?s=640x640&k=20&c=sNEBT4YCb2-QeI3dMOfXPG-Y3IdT1wkHB7nzZN9ayxg=", text: "Limpieza Industrial", price: "$30.000" },
+      { img: "https://media.istockphoto.com/id/1365606525/es/foto/toma-de-un-cubo-de-art%C3%ADculos-de-limpieza.jpg?s=612x612&w=0&k=20&c=F16ka9KPsmIwGzClt4y-yrec43BZZjit8OpV3geAySA=", text: "Limpieza a domicilio", price: "$45.000" },
+      { img: "https://img.freepik.com/foto-gratis/composicion-plana-productos-limpieza-espacio-copia_23-2148133453.jpg", text: "Venta de Insumos", price: "$25.000" },
+      { img: "https://media.gettyimages.com/id/1985444295/es/v%C3%ADdeo/t%C3%A9cnico-de-sistemas-de-energ%C3%ADa-solar-limpieza-de-paneles-solares-servicio-de-mantenimiento-de.jpg?s=640x640&k=20&c=sNEBT4YCb2-QeI3dMOfXPG-Y3IdT1wkHB7nzZN9ayxg=", text: "Limpieza Industrial", price: "$30.000" },
     ]
   }
 ];
@@ -196,3 +193,45 @@ function irAlTexto(id) {
   const elemento = document.getElementById(id);
   elemento.scrollIntoView({ behavior: "smooth" }); // scroll suave
 }
+
+const chatToggle = document.getElementById("chatToggle");
+    const chatBox = document.getElementById("chatBox");
+    const sendBtn = document.getElementById("sendBtn");
+    const userInput = document.getElementById("userInput");
+    const chatMessages = document.getElementById("chatMessages");
+
+    // Mostrar/ocultar chat
+    chatToggle.addEventListener("click", () => {
+      chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
+    });
+
+    // Enviar mensaje
+    function sendMessage() {
+      const text = userInput.value.trim();
+      if (text) {
+        // Mensaje del usuario
+        const userMsg = document.createElement("div");
+        userMsg.classList.add("message", "user");
+        userMsg.textContent = text;
+        chatMessages.appendChild(userMsg);
+
+        // Respuesta automática
+        setTimeout(() => {
+          const botMsg = document.createElement("div");
+          botMsg.classList.add("message", "bot");
+          botMsg.textContent = text.toLowerCase().includes("hola")
+            ? "¡Hola! 😊 ¿Cómo estás?"
+            : "Gracias por tu mensaje, te responderé pronto.";
+          chatMessages.appendChild(botMsg);
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 500);
+
+        userInput.value = "";
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+    }
+
+    sendBtn.addEventListener("click", sendMessage);
+    userInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") sendMessage();
+    });
