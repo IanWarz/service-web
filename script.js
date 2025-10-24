@@ -150,43 +150,92 @@ window.irAlTexto = function(id) {
 }
 
 const chatToggle = document.getElementById("chatToggle");
-    const chatBox = document.getElementById("chatBox");
-    const sendBtn = document.getElementById("sendBtn");
-    const userInput = document.getElementById("userInput");
-    const chatMessages = document.getElementById("chatMessages");
+const chatBox = document.getElementById("chatBox");
+const sendBtn = document.getElementById("sendBtn");
+const userInput = document.getElementById("userInput");
+const chatMessages = document.getElementById("chatMessages");
 
-    // Mostrar/ocultar chat
-    chatToggle.addEventListener("click", () => {
-      chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
+// Mostrar/ocultar chat
+chatToggle.addEventListener("click", () => {
+  chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
+});
+
+// Generar/guardar sessionId (para persistencia)
+const sessionKey = "chatSessionId";
+let sessionId = localStorage.getItem(sessionKey);
+if (!sessionId) {
+  sessionId = crypto.randomUUID();
+  localStorage.setItem(sessionKey, sessionId);
+}
+
+// Enviar mensaje al asistente
+async function sendMessage() {
+  const text = userInput.value.trim();
+  if (!text) return;
+
+  // Mostrar mensaje del usuario
+  const userMsg = document.createElement("div");
+  userMsg.classList.add("message", "user");
+  userMsg.textContent = text;
+  chatMessages.appendChild(userMsg);
+  userInput.value = "";
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+
+  try {
+    const res = await fetch("https://n8n-222090883518.southamerica-west1.run.app/webhook/5cfc8744-fc23-46ff-bfe3-9384dfe83163/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sessionId, chatInput: text }), // chatInput es lo que tu flujo espera
     });
 
-    // Enviar mensaje
-    function sendMessage() {
-      const text = userInput.value.trim();
-      if (text) {
-        // Mensaje del usuario
-        const userMsg = document.createElement("div");
-        userMsg.classList.add("message", "user");
-        userMsg.textContent = text;
-        chatMessages.appendChild(userMsg);
+    const data = await res.json();
 
-        // Respuesta automática
-        setTimeout(() => {
-          const botMsg = document.createElement("div");
-          botMsg.classList.add("message", "bot");
-          botMsg.textContent = text.toLowerCase().includes("hola")
-            ? "¡Hola! 😊 ¿Cómo estás?"
-            : "Gracias por tu mensaje, te responderé pronto.";
-          chatMessages.appendChild(botMsg);
-          chatMessages.scrollTop = chatMessages.scrollHeight;
-        }, 500);
-
-        userInput.value = "";
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-      }
+    // Normalizar la respuesta
+    let messages = [];
+    if (data.output) {
+      messages = [{ text: data.output }];
+    } else if (Array.isArray(data)) {
+      messages = data.map(item => ({ text: item.output || JSON.stringify(item) }));
+    } else if (data.items) {
+      messages = data.items.map(i => ({ text: i.json.output || JSON.stringify(i.json) }));
+    } else {
+      messages = [{ text: "Error al obtener respuesta del asistente 😕" }];
     }
 
-    sendBtn.addEventListener("click", sendMessage);
-    userInput.addEventListener("keypress", (e) => {
-      if (e.key === "Enter") sendMessage();
+    // Mostrar los mensajes del bot
+    messages.forEach(msg => {
+      let botText = msg.text;
+
+      // Detectar bloque Markdown tipo ```json``` y limpiar si existe
+      const mdMatch = botText.match(/```json\s*([\s\S]*?)\s*```/);
+      if (mdMatch) {
+        try {
+          const parsed = JSON.parse(mdMatch[1]);
+          botText = parsed.text || JSON.stringify(parsed);
+        } catch (e) {
+          console.error("Error parseando JSON del asistente:", e);
+        }
+      }
+
+      const botMsg = document.createElement("div");
+      botMsg.classList.add("message", "bot");
+      botMsg.textContent = botText;
+      chatMessages.appendChild(botMsg);
     });
+
+  } catch (err) {
+    const botMsg = document.createElement("div");
+    botMsg.classList.add("message", "bot");
+    botMsg.textContent = "Error conectando con el asistente 😕";
+    chatMessages.appendChild(botMsg);
+    console.error(err);
+  }
+
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Event listeners
+sendBtn.addEventListener("click", sendMessage);
+userInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") sendMessage();
+});
