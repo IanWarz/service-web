@@ -181,32 +181,52 @@ async function sendMessage() {
   userInput.value = "";
   chatMessages.scrollTop = chatMessages.scrollHeight;
 
+  // === 🔵 Indicador de escritura ("typing") ===
+  const typingIndicator = document.createElement("div");
+  typingIndicator.classList.add("message", "bot", "typing");
+  typingIndicator.innerHTML = `
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  `;
+  chatMessages.appendChild(typingIndicator);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+
   try {
-    const res = await fetch("https://n8n-222090883518.southamerica-west1.run.app/webhook/7efcaa84-1d51-4b03-8c57-193606a4a65f", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ sessionId, chatInput: text }), // chatInput es lo que tu flujo espera
-    });
+    const res = await fetch(
+      "https://n8n-222090883518.southamerica-west1.run.app/webhook/7efcaa84-1d51-4b03-8c57-193606a4a65f",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ sessionId, chatInput: text }),
+      }
+    );
 
     const data = await res.json();
 
-    // Normalizar la respuesta
+    // Remover indicador de escritura
+    typingIndicator.remove();
+
+    // Normalizar respuesta
     let messages = [];
     if (data.output) {
       messages = [{ text: data.output }];
     } else if (Array.isArray(data)) {
-      messages = data.map(item => ({ text: item.output || JSON.stringify(item) }));
+      messages = data.map((item) => ({
+        text: item.output || JSON.stringify(item),
+      }));
     } else if (data.items) {
-      messages = data.items.map(i => ({ text: i.json.output || JSON.stringify(i.json) }));
+      messages = data.items.map((i) => ({
+        text: i.json.output || JSON.stringify(i.json),
+      }));
     } else {
       messages = [{ text: "Error al obtener respuesta del asistente 😕" }];
     }
 
-    // Mostrar los mensajes del bot
-    messages.forEach(msg => {
+    // Mostrar mensajes del bot
+    messages.forEach((msg) => {
       let botText = msg.text;
 
-      // Detectar bloque Markdown tipo ```json``` y limpiar si existe
       const mdMatch = botText.match(/```json\s*([\s\S]*?)\s*```/);
       if (mdMatch) {
         try {
@@ -222,8 +242,8 @@ async function sendMessage() {
       botMsg.textContent = botText;
       chatMessages.appendChild(botMsg);
     });
-
   } catch (err) {
+    typingIndicator.remove();
     const botMsg = document.createElement("div");
     botMsg.classList.add("message", "bot");
     botMsg.textContent = "Error conectando con el asistente 😕";
@@ -233,6 +253,7 @@ async function sendMessage() {
 
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
+
 
 // Event listeners
 sendBtn.addEventListener("click", sendMessage);
