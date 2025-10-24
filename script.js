@@ -182,7 +182,7 @@ async function sendMessage() {
   chatMessages.scrollTop = chatMessages.scrollHeight;
 
   try {
-    const res = await fetch("https://n8n-222090883518.southamerica-west1.run.app/webhook/5cfc8744-fc23-46ff-bfe3-9384dfe83163/chat", {
+    const res = await fetch("https://n8n-222090883518.southamerica-west1.run.app/webhook/edb0e7d3-850a-4803-977a-b1da870c58a2/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ sessionId, chatInput: text }), // chatInput es lo que tu flujo espera
