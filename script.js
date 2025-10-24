@@ -1,7 +1,7 @@
 
 async function getCarrucel(param) {
 
-  let url = "https://n8n-222090883518.southamerica-west1.run.app/webhook/fb86a804-1cdd-4eab-8e74-0bc5d5a9cb18";
+  let url = "https://n8n-222090883518.southamerica-west1.run.app/webhook/7efcaa84-1d51-4b03-8c57-193606a4a65f";
 
   let body = {
     type: param
