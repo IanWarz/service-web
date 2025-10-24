@@ -1,7 +1,7 @@
 
 async function getCarrucel(param) {
 
-  let url = "https://n8n-222090883518.southamerica-west1.run.app/webhook/7efcaa84-1d51-4b03-8c57-193606a4a65f";
+  let url = "https://n8n-222090883518.southamerica-west1.run.app/webhook/fb86a804-1cdd-4eab-8e74-0bc5d5a9cb18";
 
   let body = {
     type: param
@@ -182,7 +182,7 @@ async function sendMessage() {
   chatMessages.scrollTop = chatMessages.scrollHeight;
 
   try {
-    const res = await fetch("https://n8n-222090883518.southamerica-west1.run.app/webhook/edb0e7d3-850a-4803-977a-b1da870c58a2/chat", {
+    const res = await fetch("https://n8n-222090883518.southamerica-west1.run.app/webhook/7efcaa84-1d51-4b03-8c57-193606a4a65f", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ sessionId, chatInput: text }), // chatInput es lo que tu flujo espera
